@@ -6,7 +6,11 @@ pipeline {
   stages{
       stage("Cloning git repo") {
         steps{
-            git 'https://github.com/chanakyacool/Node-js-test.git'
+            git(
+              url: 'git@github.com:chanakyacool/Node-js-test.git'
+              credentialsId: '0b42ceee-8e1d-45ca-8099-0f324a42205e',
+              branch: 'main'
+              )
         }
       }
       stage('Buld dependencies'){
