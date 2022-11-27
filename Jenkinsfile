@@ -23,8 +23,7 @@ pipeline {
             sh 'npm run test'
         }
       }
-
-      stages('SLAnalyse'){
+      stage('SLAnalyse'){
         steps{
           sh 'curl https://cdn.shiftleft.io/download/sl > ${env.WORKSPACE}/sl && chmod a+rx ${env.WORKSPACE}/sl'
           sh '${env.WORKSPACE}/sl auth $sl-org --token $sl-token'
