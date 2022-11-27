@@ -32,7 +32,7 @@ pipeline {
         steps{
           sh "curl https://cdn.shiftleft.io/download/sl > ${env.WORKSPACE}/sl && chmod a+rx ${env.WORKSPACE}/sl"
           dir("${env.WORKSPACE}") {
-            sh "./sl analyze --app NodeJs --js --cpg ${env.WORKSPACE}"
+            sh "./sl analyze --app NodeJs --js --cpg ."
           }
         }
       }
