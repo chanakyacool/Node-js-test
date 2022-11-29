@@ -35,6 +35,6 @@ pipeline {
 //             sh "./sl analyze --app NodeJs --js --cpg ."
 //           }
 //         }
-      }
+//       }
     }
 }
