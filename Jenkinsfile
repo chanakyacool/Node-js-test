@@ -1,10 +1,10 @@
 pipeline {
   agent any
 
-  environment {
-    SHIFTLEFT_ACCESS_TOKEN = credentials('SHIFTLEFT_ACCESS_TOKEN')
-    SHIFTLEFT_ORG_ID = credentials('SHIFTLEFT_ORG_ID')
-  }
+//   environment {
+//     SHIFTLEFT_ACCESS_TOKEN = credentials('SHIFTLEFT_ACCESS_TOKEN')
+//     SHIFTLEFT_ORG_ID = credentials('SHIFTLEFT_ORG_ID')
+//   }
 
   tools { nodejs "nodejs-plugin" }
 
