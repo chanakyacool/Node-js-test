@@ -6,7 +6,7 @@ pipeline {
     SHIFTLEFT_ORG_ID = credentials('SHIFTLEFT_ORG_ID')
   }
 
-  tools { nodejs "Nodejs-plugin" }
+  tools { nodejs "nodejs-plugin" }
 
   stages{
       stage("Cloning git repo") {
@@ -28,13 +28,13 @@ pipeline {
             sh 'npm run test'
         }
       }
-      stage('SLAnalyse'){
-        steps{
-          sh "curl https://cdn.shiftleft.io/download/sl > ${env.WORKSPACE}/sl && chmod a+rx ${env.WORKSPACE}/sl"
-          dir("${env.WORKSPACE}") {
-            sh "./sl analyze --app NodeJs --js --cpg ."
-          }
-        }
+//       stage('SLAnalyse'){
+//         steps{
+//           sh "curl https://cdn.shiftleft.io/download/sl > ${env.WORKSPACE}/sl && chmod a+rx ${env.WORKSPACE}/sl"
+//           dir("${env.WORKSPACE}") {
+//             sh "./sl analyze --app NodeJs --js --cpg ."
+//           }
+//         }
       }
     }
 }
